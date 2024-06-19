@@ -1,0 +1,30 @@
+.authpage {
+    padding-top: 50px;
+
+    &__flex {
+        display: flex;
+        justify-content: center;
+
+        &:first-child {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__btn {
+        display: block;
+
+        &:first-child {
+            margin-right: 23px;
+        }
+    }
+
+    &__submit {
+        margin: 30px auto;
+    }
+
+    &__link {
+        margin: 0 auto;
+        display: block;
+        width: fit-content;
+    }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ pageTitle }}</title>
+        <meta name="title" content="{{ pageTitle|default('Римера') }}">
+        <link rel="stylesheet" type="text/css" href="/dist/styles.css">
+        {# {% include 'assets.html' %} #}
+    </head>
+
+    <body>
+        <header class="authpage container">
+            <div class="authpage__flex">
+                <img class="authpage__logo" src="/images/authlogo.webp" alt="Logo"/>
+            </div>
+
+            <div class="authpage__flex">
+                <a class="authpage__btn button{% if isLogin %} button--blocked{% else %} button--active{% endif %}" href="/login">Войти</a>
+                <a class="authpage__btn button{% if isLogin %} button--active{% else %} button--blocked{% endif %}" href="/signup">Регистрация</a>
+            </div>
+        </header>
+        
+        {% block bodyContent %}{% endblock %}
+
+        <script src="/dist/bundle.js" type="application/javascript" defer></script>
+    </body>
+
+</html>

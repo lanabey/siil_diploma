@@ -1,0 +1,40 @@
+{% set pageTitle = "Авторизация" %}
+{% set isLogin = true %}
+
+{% extends "layouts/logoHeader.njk" %}
+
+{% block bodyContent %}
+
+    <main class="container">
+        <section class="section">
+            <form id="login-form" class="form" action="/login" method="post" enctype="application/x-www-form-urlencoded">
+                <label class="form__label" for="form-tinorg">Выберите организацию</label>
+                <select class="form__input" id="form-tinorg" name="tinorg" required>
+                    {% for org in orgs %}
+                        <option value="{{ org.TIN_org }}">{{ org.org_name }}</option>
+                    {% endfor %}
+                </select>
+                <label class="form__label" for="form-username">Табельный номер</label>
+                <input class="form__input" id="form-username" name="username" type="text" required>
+                <label class="form__label" for="form-password">ПИН-код</label>
+                <input class="form__input" id="form-password" name="password" type="password" required>
+
+                {% if authFailed == 'invalidCredentials' %}
+                    <div class="form__negative">Введены неверные данные!</div>
+                {% elif authFailed == 'noUser' %}
+                    <div class="form__negative">Пользователь не зарегистрирован!</div>
+                {% elif authFailed == 'wrongPassword' %}
+                    <div class="form__negative">Неверный логин или пароль!</div>
+                {% elif authFailed == 'failAccess' %}
+                    <div class="form__negative">Ошибка авторизации, обратитесь в техподдержку.</div>
+                {% endif %}
+
+                <button class="authpage__submit button button--active" type="submit">Войти</button>
+            </form>
+            {# <div>
+                <a class="authpage__link" href="support">Техническая поддержка</a>
+            </div> #}
+        </section>
+    </main>
+
+{% endblock %}

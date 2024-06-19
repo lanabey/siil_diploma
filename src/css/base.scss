@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local('Roboto-Regular'), local('Roboto Regular'),
+        url('../fonts/Roboto-Regular.woff2') format('woff2'), url('../fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    src: local('Roboto-Bold'), local('Roboto Bold'), url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-text-size-adjust: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+  
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background-color: $white;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', sans-serif;
+    background: $white;
+    color: $black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+    min-width: $containerMinWidth;
+    overflow-x: hidden;
+    overflow-anchor: none;
+}
+  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p {
+    margin: 0;
+    padding: 0;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+}
+  
+ul {
+    list-style-type: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.container {
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    margin-bottom: 50px;
+
+    &__header {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+}
+
+.button {
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 15px;
+    padding: 10px 15px;
+    width: fit-content;
+    transition: color .3s, background-color .3s;
+    cursor: pointer;
+
+    &--small {
+        font-size: 12px;
+    }
+
+    &--green {
+        background-color: $green;
+    }
+
+    &--red {
+        background-color: $red;
+    }
+
+    &--blocked {
+        background-color: $atpGrey;
+    }
+
+    &--active {
+        background-color: $atpYellow;
+    }
+}
+
+.input {
+    border: none;
+}
+
+.info {
+    padding: 25px;
+    border: 1px solid $black;
+    border-radius: 15px;
+    line-height: 1.2;
+}
+
+.error-message {
+    color: $red;
+    margin-top: 4px;
+}
+
+.success-message {
+    color: $green;
+    margin-top: 4px;
+}
+  

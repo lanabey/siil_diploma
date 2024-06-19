@@ -1,0 +1,36 @@
+{% set pageTitle = 'Техническая поддержка' %}
+
+{% extends "layouts/default.njk" %}
+
+{% block bodyContent %}
+
+    <section class="section">
+        <div class="section__header">
+            <h1 class="section__title">Техническая поддержка</h1>
+        </div>
+
+        <form ="form" action="/api/support" method="POST">
+            <div class="form__group">
+                <label class="form__label">Опишите проблему</label>
+                <textarea class="form__input" rows="5" cols="30" name="text" required></textarea>
+            </div>
+            <div class="form__group">
+                <label class="form__label">Оставьте свои контактные данные для обратной связи (не забудьте указать удобное время и способ связи)</label>
+                <textarea class="form__input" rows="5" cols="30" name="contactData" required></textarea>
+            </div>
+
+            {% if success == 'true' %}
+                <div id="successMessage" class="success-message">
+                    Ваше сообщение успешно отправлено!
+                </div>
+            {% elif failure == 'true' %}
+                <div id="failureMessage" class="error-message">
+                    Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте снова.
+                </div>
+            {% endif %}
+
+            <button class="form__button button button--active" type="submit">Отправить</button>
+        </form>
+    </section>
+
+{% endblock %}

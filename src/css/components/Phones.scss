@@ -1,0 +1,18 @@
+.phones {
+    display: flex;
+    flex-direction: column;
+
+    &__button {
+        display: flex;
+        border: none;
+        background: transparent;
+        margin-bottom: 30px;
+        text-align: start;
+    }
+
+    &__text {
+        margin-left: 30px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

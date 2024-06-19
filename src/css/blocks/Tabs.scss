@@ -1,0 +1,19 @@
+.tabs {
+    position: absolute;
+    top: 20px;
+    display: flex;
+
+    &__btn {
+        border: none;
+        border-radius: 50%;
+        padding: 8px 12px;
+        margin-right: 10px;
+        background-color: $atpGrey;
+        color: $darkGrey;
+
+        &--active {
+            color: $black;
+            background-color: $white;
+        }
+    }
+}

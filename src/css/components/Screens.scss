@@ -1,0 +1,314 @@
+.screens {
+
+    &__date {
+        display: block;
+        padding-top: 15px;
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: normal;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 25px;
+
+        &--blue {
+            color: $blue;
+        }
+    }
+
+    &__textline {
+        font-size: 20px;
+
+        &--withicon {
+            margin-right: 20px;
+        }
+
+        &--image {
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        &--busstop {
+            margin-left: 10px;
+        }
+
+        &--margin {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__heading {
+        display: inline-block;
+        min-width: 80px;
+
+        &--route {
+            flex-direction: column;
+        }        
+    }
+    
+    &__controls {
+        background-color: $red;
+        color: $white;
+        margin-bottom: 15px;
+        font-family: inherit;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:active {
+            background-color: $white;
+            color: $black;
+            outline: 2px solid $red;
+        }
+
+        &--red {
+            background-color: $red;
+            font-size: 12px;
+        }
+
+        &--green {
+            background-color: $green;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        &--margin {
+            margin-top: auto;
+            margin-bottom: 50px;
+        }
+
+        &--report {
+            margin-bottom: 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &--menu {
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__input {
+        min-width: 176px;
+        border: none;
+        padding: 10px 10px;
+        font-size: 12px;
+        line-height: 100%;
+        font-weight: bold;
+        font-family: inherit;
+        border-radius: 15px;
+        margin-bottom: 5px;
+        background-color: $atpYellow;
+
+        &--summary {
+            width: 80px;
+            display: inline-block;
+        }
+    }
+
+    &__button {
+        display: block;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border-radius: 15px;
+        border: none;
+
+        &--num {
+            font-size: 12px;
+            font-weight: bold;
+            font-family: inherit;
+        }
+    }
+
+    &__name {
+        margin-bottom: 40px;
+        width: 40%;
+        position: relative;
+    }
+
+    &__label--text {
+        display: block;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+    }
+
+    &__row {
+        display: flex;
+
+        &--item {
+            margin-right: 5px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &--center {
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__checkbox, &__radio {
+        margin-bottom: 20px;
+
+        &--label {
+            margin-right: 15px;
+        }
+
+        &--item {
+            margin-right: 5px;
+        }
+    }
+
+    &__tabs {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__tab {
+        max-width: 285px;
+        padding: 10px 20px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        text-align: center;
+        background-color: $blue;
+        color: $white;
+        font-weight: bold;
+        font-size: 24px;
+        text-transform: uppercase;
+        transition: background-color .3s;
+        cursor: pointer;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $red;
+        }
+
+        &--disabled {
+            opacity: .5;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $blue;
+            }
+        }
+    }
+
+    &__businfo {
+        display: flex;
+
+        &--info {
+            padding: 10px;
+        }
+
+        &--data {
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        &--time {
+            padding-top: 15px;
+        }
+
+        &--stop {
+            display: block;
+            padding: 5px 0;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 320px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__alarm {
+        margin-right: 20px;
+    }
+
+    &__shiftsinfo {
+        display: flex;
+        padding-top: 10px;
+
+        &--time {
+            padding-left: 20px;
+        }
+
+        &--content {
+            flex-direction: column;
+        }
+
+        &--onroute {
+            padding-top: 10px;
+        }
+    }
+
+    &__phones {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &--text {
+            display: block;
+            max-width: 80px;
+            padding-top: 15px;
+        }   
+    }
+
+    &__main {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+    }
+
+    &__report {
+        font-family: inherit;
+        
+        &--large {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        &--lable {
+            padding: 5px 0;
+        }
+
+        &--left {
+            margin-left: 10px;
+        }
+
+        &--right {
+            margin-right: 10px;
+        }
+
+        &--calc {
+            padding: 0 10px;
+            margin: 0;
+            background-color: transparent;
+        }
+
+        &--button {
+            margin: 0;
+            margin-bottom: 10px;
+
+            @media (max-width: 320px) {
+                margin-bottom: 20px;
+                font-size: 12px;
+            }
+        }
+
+        &--blue {
+            color: $blue;
+        }
+    }
+}

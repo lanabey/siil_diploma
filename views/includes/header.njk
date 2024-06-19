@@ -1,0 +1,27 @@
+<header class="header container">
+    <div class="header__container">
+        <div class="header__menu">
+            {% if not hasButtons %}
+                <a class="header__menu--link" href="/screens">Главная</a>
+            {% endif %}
+
+            <label class="header__btn" for="nav_checkbox">
+                <img class="header__logo" src="/images/profile.svg" alt="Main menu"/>
+            </label>
+
+            <input type="checkbox" class="header__checkbox" id="nav_checkbox">
+
+            <nav class="header__nav">
+                <a class="header__link" href="/profile">Редактировать профиль</a>
+                <a class="header__link" href="/timetables">Список расписаний</a>
+                <a class="header__link" href="/buses">Список автобусов</a>
+                <a class="header__link" href="/phones">Список телефонных номеров</a>
+                <a class="header__link" href="/payslips">Расчетные листки</a>
+                <a class="header__link" href="/reports">Отчеты и статистика</a>
+                <a class="header__link" href="/alarms">Будильники</a>
+                <a class="header__link" href="/support">Техническая поддержка</a>
+                <a class="header__link" href="/extras">Дополнительные возможности</a>
+            </nav>
+        </div>
+    </div>
+</header>

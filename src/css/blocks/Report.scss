@@ -1,0 +1,47 @@
+.report {
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 60px;
+        gap: 10px;
+        margin: 50px 0;
+    }
+
+    &__cell {
+        font-size: 20px;
+
+        &--right {
+            color: $blue;
+            text-align: center;
+        }
+
+        &--title{
+            grid-column: 1/-1;
+            padding: 30px 0;
+            color: $blue;
+        }
+    }
+
+    &__bus {
+        display: flex;
+        flex-wrap: wrap;
+
+        &--line {
+            padding-left: 10px;
+        }
+    }
+
+    &__line {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        &--date {
+            margin-bottom: 0;
+        }
+    }
+}

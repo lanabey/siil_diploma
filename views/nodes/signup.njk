@@ -1,0 +1,40 @@
+{% set pageTitle = "Регистрация" %}
+{% set isLogin = false %}
+
+{% extends "layouts/logoHeader.njk" %}
+
+{% block bodyContent %}
+
+    <main class="container">
+        <section class="section">
+            <form id="signin-form" class="form" action="/signup" method="post" enctype="application/x-www-form-urlencoded">
+                <label class="form__label" for="form-tinorg">Выберите организацию</label>
+                <select class="form__input" id="form-tinorg" name="tinorg" required>
+                    {% for org in orgs %}
+                        <option value="{{ org.TIN_org }}">{{ org.org_name }}</option>
+                    {% endfor %}
+                </select>
+                <label class="form__label" for="form-name">Табельный номер</label>
+                <input class="form__input" id="form-name" name="username" type="text" required>
+                <label class="form__label" for="form-password">ПИН-код</label>
+                <input class="form__input" id="form-password" name="password" type="password" required>
+
+                {% if signupFailed == 'invalidCredentials' %}
+                    <div class="form__negative">Введены неверные данные!</div>
+                {% elif signupFailed == 'noOrg' %}
+                    <div class="form__negative">Организация не зарегистрирована.</div>
+                {% elif signupFailed == 'userExists' %}
+                    <div class="form__negative">Пользователь уже зарегистрирован!</div>
+                {% elif signupFailed == 'failAccess' %}
+                    <div class="form__negative">Ошибка регистрации, обратитесь в техподдержку.</div>
+                {% endif %}
+
+                <button class="authpage__submit button button--active" type="submit">Регистрация</button>
+            {# </form>
+            <div>
+                <a class="authpage__link" href="/support">Техническая поддержка</a>
+            </div> #}
+        </section>
+    </main>
+
+{% endblock %}
