@@ -12,6 +12,16 @@ const Alarms = require('../models/Alarms');
 const router = express.Router();
 
 router
+    .route('/')
+    .get(auth, async (req, res) => {
+        if (!req.user) {
+            return res.redirect('/login');
+        }
+
+        return res.redirect('/screens');
+    });
+
+router
     .route('/login')
     .get(auth, async (req, res) => {
         if (req.user) {

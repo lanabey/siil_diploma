@@ -1,8 +1,8 @@
 {
-  "name": "rimera-tg-bot",
+  "name": "atp_app",
   "version": "1.0.0",
   "main": "app.js",
-  "author": "adolganov",
+  "author": "lanabey",
   "license": "MIT",
   "scripts": {
     "start": "node app.js",
