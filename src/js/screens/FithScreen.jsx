@@ -22,16 +22,14 @@ const fifthScreen = ({ resetScreen }) => {
     }, []);
 
     const calcOdometer = () => {
-        const v1 = parseInt(fourthScreenState.odometer);
-        const v2 = parseInt(secondScreenState.odometer);
-
-        return isNaN(v1) || isNaN(v2) ? 0 : v1 - v2;
+        let odometer = 0;
+        if (fourthScreenState.odometer && secondScreenState.odometer) {
+            const v1 = parseInt(fourthScreenState.odometer);
+            const v2 = parseInt(secondScreenState.odometer);
+            odometer = v1 - v2;
+        }
+        return odometer;
     }
-
-    // const handleClick = () => {
-    //     // dispatch(resetData());
-    //     resetScreen();
-    // }
 
     return (
         <div>
@@ -66,7 +64,7 @@ const fifthScreen = ({ resetScreen }) => {
 
             <div className="report__grid">
                 <div className="report__cell">Всего рейсов</div>
-                <div className="report__cell report__cell--right">{fourthScreenState.tripCount}</div>
+                <div className="report__cell report__cell--right">{fourthScreenState.tripCount ? fourthScreenState.tripCount : 0}</div>
 
                 <div className="report__cell">Количество смен</div>
                 <div className="report__cell report__cell--right">{firstScreenState.shift == 'double' ? 2 : 1}</div>
@@ -75,16 +73,16 @@ const fifthScreen = ({ resetScreen }) => {
                 <div className="report__cell report__cell--right">{calcOdometer()}</div>
 
                 <div className="report__cell">Время на линии</div>
-                <div className="report__cell report__cell--right">{firstScreenState.toRecord}</div>
+                <div className="report__cell report__cell--right">{firstScreenState.toRecord ? firstScreenState.toRecord : '00:00'}</div>
 
                 <div className="report__cell">ПЗВ</div>
                 <div className="report__cell report__cell--right">{decimalToTime(fourthScreenState.tft)}</div>
 
                 <div className="report__cell">Заправлено топлива (л)</div>
-                <div className="report__cell report__cell--right">{fourthScreenState.totalRefill}</div>
+                <div className="report__cell report__cell--right">{fourthScreenState.totalRefill ? fourthScreenState.totalRefill : 0}</div>
 
                 <div className="report__cell">Z-отчет (р)</div>
-                <div className="report__cell report__cell--right">{fourthScreenState.income}</div>
+                <div className="report__cell report__cell--right">{fourthScreenState.income ? fourthScreenState.income : 0}</div>
             </div>
 
             <button className="button button--active" type='button' onClick={() => resetScreen()}>Новая смена</button>

@@ -172,21 +172,23 @@ const fourthScreen = () => {
     }
 
     const calcWorkTFTTime = () => {
-        let departureEnterDiff = timeToMinutes(firstScreenState.fromPark) - timeToMinutes(secondScreenState.time);
-        if (departureEnterDiff < 0) {
-            departureEnterDiff += 1440;
-        }
+        let fromPark = timeToMinutes(firstScreenState.fromPark);
+        let toPark = timeToMinutes(firstScreenState.toPark);
+        let time = timeToMinutes(secondScreenState.time);
+        let leave = timeToMinutes(leaveTime);
 
-        let exitComebackDiff = timeToMinutes(leaveTime) - timeToMinutes(firstScreenState.toPark);
-        if (exitComebackDiff < 0) {
-            exitComebackDiff += 1440;
+        if (leave < toPark) {
+            leave += 1440;
         }
-
+    
+        const departureEnterDiff = fromPark - time;
+        const exitComebackDiff = leave - toPark;
+    
         const totalTimeInMinutes = departureEnterDiff + exitComebackDiff;
         const totalTimeInHours = Math.round((totalTimeInMinutes / 60) * 100) / 100;
-
+    
         return totalTimeInHours;
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
